@@ -119,7 +119,8 @@ body {
     border-radius: 50%;
     opacity: 0;
     background-color: yellow;
-    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
     -webkit-animation: pop 0.5s ease-out;
             animation: pop 0.5s ease-out;
   }
@@ -153,9 +154,15 @@ body {
       opacity: 0;
     }
   }
+  
+  
 
   @media only screen and (max-width: 600px) {
 
+    html,
+body {
+  height: 100%; /* make sure html and body take up 100% of viewport height */
+}
 
     #game-area-container {
       border-collapse: collapse;
@@ -207,13 +214,6 @@ body {
      
     }
 
-    #start-button.disabled {
-      background-color: #aaa;
-      color: #555;
-      cursor: default;
-    }
-  
-
     .pop {
       z-index: 0;
       position: absolute;
@@ -222,7 +222,8 @@ body {
       border-radius: 50%;
       opacity: 0;
       background-color: yellow;
-      animation-fill-mode: forwards;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
       -webkit-animation: pop 0.5s ease-out;
               animation: pop 0.5s ease-out;
     }
@@ -256,6 +257,8 @@ body {
         opacity: 0;
       }
     }
+    
+    
     
   }
   
