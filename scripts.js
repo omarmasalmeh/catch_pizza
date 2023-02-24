@@ -153,62 +153,32 @@ function createPizza() {
   
 
 
-//   function catchPizza(event) {
-//     if (event.target.classList.contains("pizza") && gameInProgress) {
-//         event.target.remove();
-//         score++;
-//         scoreValue.textContent = score;
-
-//         // Remove the pizza from the array of pizzas
-//         pizzas = pizzas.filter(p => p !== event.target);
-
-//         // Add a pop animation
-//         const pop = document.createElement("div");
-//         pop.classList.add("pop");
-//         if (event.type === "click") {
-//             pop.style.top = `${event.clientY - gameArea.offsetTop - 25}px`;
-//             pop.style.left = `${event.clientX - gameArea.offsetLeft - 25}px`;
-//         } else if (event.type === "touchstart") {
-//             const touch = event.touches[0];
-//             pop.style.top = `${touch.clientY - gameArea.offsetTop - 25}px`;
-//             pop.style.left = `${touch.clientX - gameArea.offsetLeft - 25}px`;
-//         }
-//         gameArea.appendChild(pop);
-//         setTimeout(() => {
-//             pop.remove();
-//         }, 1000);
-//     }
-// }
-
-function catchPizza(event) {
+  function catchPizza(event) {
     if (event.target.classList.contains("pizza") && gameInProgress) {
-      event.target.remove();
-      score++;
-      scoreValue.textContent = score;
-  
-      // Remove the pizza from the array of pizzas
-      pizzas = pizzas.filter(p => p !== event.target);
-  
-      // Add a pop animation
-      const pop = document.createElement("div");
-      pop.classList.add("pop");
-      const popSize = 50; 
-      if (event.type === "click") {
-        pop.style.top = `${event.clientY - gameArea.offsetTop - popSize/2}px`;
-        pop.style.left = `${event.clientX - gameArea.offsetLeft - popSize/2}px`;
-      } else if (event.type === "touchstart") {
-        const touch = event.touches[0];
-        pop.style.top = `${touch.clientY - gameArea.offsetTop - popSize/2}px`;
-        pop.style.left = `${touch.clientX - gameArea.offsetLeft - popSize/2}px`;
-      }
-      gameArea.appendChild(pop);
-      setTimeout(() => {
-        pop.remove();
-      }, 1000);
+        event.target.remove();
+        score++;
+        scoreValue.textContent = score;
+
+        // Remove the pizza from the array of pizzas
+        pizzas = pizzas.filter(p => p !== event.target);
+
+        // // Add a pop animation
+        // const pop = document.createElement("div");
+        // pop.classList.add("pop");
+        // if (event.type === "click") {
+        //     pop.style.top = `${event.clientY - gameArea.offsetTop - 25}px`;
+        //     pop.style.left = `${event.clientX - gameArea.offsetLeft - 25}px`;
+        // } else if (event.type === "touchstart") {
+        //     const touch = event.touches[0];
+        //     pop.style.top = `${touch.clientY - gameArea.offsetTop - 25}px`;
+        //     pop.style.left = `${touch.clientX - gameArea.offsetLeft - 25}px`;
+        // }
+        // gameArea.appendChild(pop);
+        // setTimeout(() => {
+        //     pop.remove();
+        // }, 1000);
     }
-  }
-  
-  
+}
 
 
 
