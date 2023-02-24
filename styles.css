@@ -1,7 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0; /* remove default margin */
+}
+
+html,
+body {
+  height: 100%; /* make sure html and body take up 100% of viewport height */
+}
   
   #game-container {
     display: flex;
@@ -48,7 +54,9 @@ body {
 
   
   .pizza {
-    outline: none;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: 2px solid transparent;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -77,6 +85,12 @@ body {
     color: white; /* change to the desired hover text color */
     cursor: pointer; /* change to the desired hover cursor style */
   }
+
+  #start-button.disabled {
+    background-color: #aaa;
+    color: #555;
+    cursor: default;
+  }
   
 
   button#reset-button {
@@ -98,13 +112,14 @@ body {
   
 
   .pop {
+    z-index: 0;
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     opacity: 0;
-    animation-fill-mode: forwards;
     background-color: yellow;
+    animation-fill-mode: forwards;
     -webkit-animation: pop 0.5s ease-out;
             animation: pop 0.5s ease-out;
   }
@@ -115,11 +130,11 @@ body {
       opacity: 0;
     }
     50% {
-      transform: scale(1.5);
+      transform: scale(1);
       opacity: 1;
     }
     100% {
-      transform: scale(1);
+      transform: scale(0.5);
       opacity: 0;
     }
   }
@@ -130,21 +145,17 @@ body {
       opacity: 0;
     }
     50% {
-      transform: scale(1.5);
+      transform: scale(1);
       opacity: 1;
     }
     100% {
-      transform: scale(1);
+      transform: scale(0.5);
       opacity: 0;
     }
   }
-  
-  .links a {
-    font-size: 25px;
-  }
-  
 
   @media only screen and (max-width: 600px) {
+
 
     #game-area-container {
       border-collapse: collapse;
@@ -172,7 +183,9 @@ body {
     
     
     .pizza {
-      outline: none;
+      z-index: 1;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      outline: 2px solid transparent;
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -196,9 +209,10 @@ body {
   
 
     .pop {
+      z-index: 0;
       position: absolute;
-      width: 50px;
-      height: 50px;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
       opacity: 0;
       background-color: yellow;
@@ -213,11 +227,11 @@ body {
         opacity: 0;
       }
       50% {
-        transform: scale(1.5);
+        transform: scale(1);
         opacity: 1;
       }
       100% {
-        transform: scale(1);
+        transform: scale(0.5);
         opacity: 0;
       }
     }
@@ -228,15 +242,14 @@ body {
         opacity: 0;
       }
       50% {
-        transform: scale(1.5);
+        transform: scale(1);
         opacity: 1;
       }
       100% {
-        transform: scale(1);
+        transform: scale(0.5);
         opacity: 0;
       }
     }
-    
     
   }
   

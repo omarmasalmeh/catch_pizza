@@ -18,10 +18,14 @@ let pizzaHeight = 50;
 
 
 startButton.addEventListener('click', startGame);
-resetButton.addEventListener('click', endGameAndReset)
+// Add a click event listener to the restart button
+resetButton.addEventListener("click", endGameAndReset);
 function startGame() {
     gameInProgress = true;
     startButton.disabled = true;
+  
+    // Add disabled class to start button
+    startButton.classList.add('disabled');
     bucketCounter = 0;
     score = 0;
     timer = 60;
@@ -191,26 +195,47 @@ function endGame() {
     
     pizzas = [];
     startButton.disabled = false;
+   
+    startButton.classList.remove('disabled');
     alert(`Game Over! Your score is ${score}.`);
   }
   
-
   function endGameAndReset() {
-    
     clearInterval(timerInterval);
     clearInterval(pizzaInterval);
     gameInProgress = false;
-    
+
+    startButton.disabled = false;
+   
+    startButton.classList.remove('disabled');
+  
+    // Reset counter, score, and time
+    bucketCounter = 0;
+    score = 0;
+    timer = 60;
+  
+    // Update counter, score, and time elements on the page
+    scoreValue.textContent = score;
+    timerValue.textContent = timer;
+    missValue.textContent = bucketCounter;
+  
     // Remove any remaining pizzas from the game area
     const remainingPizzas = document.querySelectorAll('.pizza');
     remainingPizzas.forEach(pizza => pizza.remove());
-    
+  
     pizzas = [];
     startButton.disabled = false;
-    
-    location.reload();
-  }
+    console.clear();
+  
+    // Restart the game
+    init();
 
+    
+  }
+  
+  
+
+  
 
   
 
