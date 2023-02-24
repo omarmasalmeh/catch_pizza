@@ -42,6 +42,7 @@ body {
     position: relative;
     width: 400px;
     height: 400px;
+    box-sizing: border-box;
   }
   
 
@@ -101,7 +102,18 @@ body {
     height: 50px;
     border-radius: 50%;
     background-color: yellow;
-    animation: pop 1s ease-out;
+    -webkit-animation: pop 1s ease-out;
+            animation: pop 1s ease-out;
+  }
+  
+  @-webkit-keyframes pop {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
   }
   
   @keyframes pop {
@@ -142,6 +154,7 @@ body {
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+      box-sizing: border-box;
     }
     
     
@@ -174,7 +187,18 @@ body {
       height: 50px;
       border-radius: 50%;
       background-color: yellow;
-      animation: pop 1s ease-out;
+      -webkit-animation: pop 1s ease-out;
+              animation: pop 1s ease-out;
+    }
+    
+    @-webkit-keyframes pop {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
     }
     
     @keyframes pop {

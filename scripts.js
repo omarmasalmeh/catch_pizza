@@ -148,50 +148,34 @@ function createPizza() {
   }
   
 
-// function catchPizza(event) {
-//     if ( event.target.classList.contains("pizza")) {
-//         event.target.remove();
-//         score++;
-//         scoreValue.textContent = score;
-//         event.target.removeEventListener("click", catchPizza);
 
-//         // Remove the pizza from the array of pizzas
-//         pizzas = pizzas.filter(p => p !== event.target);
-
-//         // Add a pop animation
-//         const pop = document.createElement("div");
-//         pop.classList.add("pop");
-//         pop.style.top = `${event.clientY - gameArea.offsetTop - 25}px`;
-//         pop.style.left = `${event.clientX - gameArea.offsetLeft - 25}px`;
-//         gameArea.appendChild(pop);
-//         setTimeout(() => {
-//             pop.remove();
-//         }, 1000);
-//     } 
-// }
-
-function catchPizza(event) {
-    if (event.target.classList.contains("pizza")) {
+  function catchPizza(event) {
+    if (event.target.classList.contains("pizza") && gameInProgress) {
         event.target.remove();
-        if (gameInProgress) {
-            score++;
-            scoreValue.textContent = score;
+        score++;
+        scoreValue.textContent = score;
 
-            // Remove the pizza from the array of pizzas
-            pizzas = pizzas.filter(p => p !== event.target);
+        // Remove the pizza from the array of pizzas
+        pizzas = pizzas.filter(p => p !== event.target);
 
-            // Add a pop animation
-            const pop = document.createElement("div");
-            pop.classList.add("pop");
+        // Add a pop animation
+        const pop = document.createElement("div");
+        pop.classList.add("pop");
+        if (event.type === "click") {
             pop.style.top = `${event.clientY - gameArea.offsetTop - 25}px`;
             pop.style.left = `${event.clientX - gameArea.offsetLeft - 25}px`;
-            gameArea.appendChild(pop);
-            setTimeout(() => {
-                pop.remove();
-            }, 1000);
+        } else if (event.type === "touchstart") {
+            const touch = event.touches[0];
+            pop.style.top = `${touch.clientY - gameArea.offsetTop - 25}px`;
+            pop.style.left = `${touch.clientX - gameArea.offsetLeft - 25}px`;
         }
+        gameArea.appendChild(pop);
+        setTimeout(() => {
+            pop.remove();
+        }, 1000);
     }
 }
+
 
 
 
