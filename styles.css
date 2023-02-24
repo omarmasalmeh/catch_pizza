@@ -48,6 +48,7 @@ body {
 
   
   .pizza {
+    outline: none;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -101,14 +102,21 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    opacity: 0;
+    animation-fill-mode: forwards;
     background-color: yellow;
-    -webkit-animation: pop 1s ease-out;
-            animation: pop 1s ease-out;
+    -webkit-animation: pop 0.5s ease-out;
+            animation: pop 0.5s ease-out;
   }
   
   @-webkit-keyframes pop {
     0% {
       transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 1;
     }
     100% {
       transform: scale(1);
@@ -119,6 +127,11 @@ body {
   @keyframes pop {
     0% {
       transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 1;
     }
     100% {
       transform: scale(1);
@@ -159,6 +172,7 @@ body {
     
     
     .pizza {
+      outline: none;
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -186,14 +200,21 @@ body {
       width: 50px;
       height: 50px;
       border-radius: 50%;
+      opacity: 0;
       background-color: yellow;
-      -webkit-animation: pop 1s ease-out;
-              animation: pop 1s ease-out;
+      animation-fill-mode: forwards;
+      -webkit-animation: pop 0.5s ease-out;
+              animation: pop 0.5s ease-out;
     }
     
     @-webkit-keyframes pop {
       0% {
         transform: scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 1;
       }
       100% {
         transform: scale(1);
@@ -204,6 +225,11 @@ body {
     @keyframes pop {
       0% {
         transform: scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 1;
       }
       100% {
         transform: scale(1);
