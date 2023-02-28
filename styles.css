@@ -8,12 +8,16 @@ html,
 body {
   height: 100%; /* make sure html and body take up 100% of viewport height */
 }
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+}
   
   #game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    height: 100%;
   }
   
   #score,
@@ -21,6 +25,10 @@ body {
   #missed {
     margin-bottom: 10px;
     font-size: 24px;
+  }
+
+  #name {
+    margin: 25px;
   }
   
   #game-area-container {
@@ -38,11 +46,18 @@ body {
     align-self: center;
   }
   
-  
-  #start-button {
-    margin-top: 20px;
+  #btns {
+    display: inline-block;
+    margin: 0 20px;
+  }
+
+  #start-button, #reset-button {
+    margin-top: 25px;
   }
   
+  #links {
+    font-size: 25px;
+  }
   
   #game-area {
     position: relative;
@@ -203,6 +218,12 @@ body {
     animation: pop 0.5s ease-out;
   }
     
+  #score,
+  #timer,
+  #missed {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
   
     button#reset-button, button#start-button {
       padding: 8px 15px;

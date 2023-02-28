@@ -137,7 +137,7 @@ function createPizza() {
     pizzaWidth = pizza.offsetWidth;
     pizzaHeight = pizza.offsetHeight;
   
-    const animationDuration = Math.max(timer * 100 / 2, 1000); // the animation should last at least 2 seconds
+    const animationDuration = Math.max(timer * 100 / 2, 500); // the animation should last at least 2 seconds
     console.log("Starting pizza animation", pizza);
     animatePizza(pizza, animationDuration, () => {
       // Add the pizza to the array of pizzas after the animation has completed
