@@ -69,6 +69,28 @@ body {
     left: calc(50% - 25px);
     max-width: calc(100% - 20px);
   }
+ 
+  /* Define the animation */
+  @keyframes pop {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply the animation to the pizza image */
+  .pizza.pop {
+    animation: pop 0.5s ease-out;
+  }
+  
 
   button#start-button {
     padding: 10px 20px;
@@ -110,53 +132,7 @@ body {
   }
   
   
-
-  /* .pop {
-    z-index: 0;
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    opacity: 0;
-    background-color: yellow;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: pop 0.5s ease-out;
-            animation: pop 0.5s ease-out;
-  }
-  
-  @-webkit-keyframes pop {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    50% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0.5);
-      opacity: 0;
-    }
-  }
-  
-  @keyframes pop {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    50% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0.5);
-      opacity: 0;
-    }
-  } */
-  
-  
-
+/* Screens smaller than 600px wide like smartphones */
   @media only screen and (max-width: 600px) {
 
     html,
@@ -205,6 +181,27 @@ body {
       left: calc(50% - 25px);
       max-width: calc(100% - 20px);
     }
+
+     /* Define the animation */
+  @keyframes pop {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply the animation to the pizza image */
+  .pizza.pop {
+    animation: pop 0.5s ease-out;
+  }
     
   
     button#reset-button, button#start-button {
@@ -213,52 +210,6 @@ body {
       margin-top: 18px;
      
     }
-
-    /* .pop {
-      z-index: 0;
-      position: absolute;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      opacity: 0;
-      background-color: yellow;
-      -webkit-animation-fill-mode: forwards;
-              animation-fill-mode: forwards;
-      -webkit-animation: pop 0.5s ease-out;
-              animation: pop 0.5s ease-out;
-    }
-    
-    @-webkit-keyframes pop {
-      0% {
-        transform: scale(0);
-        opacity: 0;
-      }
-      50% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-    }
-    
-    @keyframes pop {
-      0% {
-        transform: scale(0);
-        opacity: 0;
-      }
-      50% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-    }
-     */
-    
     
   }
   

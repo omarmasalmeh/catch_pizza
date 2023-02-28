@@ -58,9 +58,6 @@ function updateBucketCounter() {
   }
   
 
-  
-
-
   function init() {
     if (!gameInProgress) {
       return;
@@ -71,9 +68,6 @@ function updateBucketCounter() {
     }, 1000);
   }
   
-
-
-
 
 
 let pizzas = [];
@@ -155,33 +149,22 @@ function createPizza() {
 
   function catchPizza(event) {
     if (event.target.classList.contains("pizza") && gameInProgress) {
-        event.target.remove();
+        const pizza = event.target;
+        
         score++;
         scoreValue.textContent = score;
 
         // Remove the pizza from the array of pizzas
         pizzas = pizzas.filter(p => p !== event.target);
 
-        // // Add a pop animation
-        // const pop = document.createElement("div");
-        // pop.classList.add("pop");
-        // if (event.type === "click") {
-        //     pop.style.top = `${event.clientY - gameArea.offsetTop - 25}px`;
-        //     pop.style.left = `${event.clientX - gameArea.offsetLeft - 25}px`;
-        // } else if (event.type === "touchstart") {
-        //     const touch = event.touches[0];
-        //     pop.style.top = `${touch.clientY - gameArea.offsetTop - 25}px`;
-        //     pop.style.left = `${touch.clientX - gameArea.offsetLeft - 25}px`;
-        // }
-        // gameArea.appendChild(pop);
-        // setTimeout(() => {
-        //     pop.remove();
-        // }, 1000);
+            // Add the "pop" class to the pizza to trigger the animation
+        pizza.classList.add("pop");
+        setTimeout(() => {
+          pizza.remove();
+        }, 200);
+
     }
 }
-
-
-
 
 
 function endGame() {
